@@ -42,4 +42,4 @@ RUN uv venv --python python${PYTHON_VERSION} && uv pip install "lerobot[pi,smolv
 RUN echo "source /work/.venv/bin/activate" >> /home/user/.bashrc
 
 
-CMD ["bash", "-c", "sudo chown user /work; mkdir -p /home/user/.ssh; chmod 700 /home/user/.ssh; echo $PUBLIC_KEY; echo \"$PUBLIC_KEY\" >> /home/user/.ssh/authorized_keys; chmod 700 /home/user/.ssh/authorized_keys; sudo service ssh start; bash"]
+CMD ["bash", "-c", "sudo chown user /work; mkdir -p /home/user/.ssh; chmod 700 /home/user/.ssh; echo $PUBLIC_KEY; echo \"$PUBLIC_KEY\" >> /home/user/.ssh/authorized_keys; chmod 700 /home/user/.ssh/authorized_keys; sudo service ssh start; sleep infinity"]
