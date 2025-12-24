@@ -37,7 +37,7 @@ RUN chown -R user:user /work
 
 USER user
 
-RUN uv venv --python python${PYTHON_VERSION} && uv pip install "lerobot[pi,smolvlva,async]" wandb
+RUN uv venv --python python${PYTHON_VERSION} && uv pip install "git+https://github.com/huggingface/lerobot.git#egg=lerobot[pi,smolvlva,async]" wandb
 
 RUN echo "source /work/.venv/bin/activate" >> /home/user/.bashrc
 
