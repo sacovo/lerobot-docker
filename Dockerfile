@@ -41,5 +41,8 @@ RUN uv venv --python python${PYTHON_VERSION} && uv pip install "git+https://gith
 
 RUN echo "source /work/.venv/bin/activate" >> /home/user/.bashrc
 
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["bash", "-c", "sudo chown user /work; mkdir -p /home/user/.ssh; chmod 700 /home/user/.ssh; echo $PUBLIC_KEY; echo \"$PUBLIC_KEY\" >> /home/user/.ssh/authorized_keys; chmod 700 /home/user/.ssh/authorized_keys; sudo service ssh start; sleep infinity"]
