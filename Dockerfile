@@ -37,7 +37,7 @@ RUN chown -R user:user /work
 
 USER user
 
-RUN uv venv --python python${PYTHON_VERSION} && uv pip install "git+https://github.com/huggingface/lerobot.git@17c5a0774faf2ed956315bb225daa8791f650a96#egg=lerobot[smolvlva,async]" "git+https://github.com/sacovo/lerobot_policy_act_ttt.git@1f5c55d6600d459f356ae5a2550d8b066e13f13d" wandb transformers num2words
+RUN uv venv --python python${PYTHON_VERSION} && uv pip install "git+https://github.com/huggingface/lerobot.git@17c5a0774faf2ed956315bb225daa8791f650a96#egg=lerobot[smolvlva,async]" "git+https://github.com/sacovo/lerobot_policy_act_ttt.git@7bc667b14d0468e2fd939de4b9a42be9b2410693" wandb transformers num2words
 
 RUN echo "source /work/.venv/bin/activate" >> /home/user/.bashrc
 
